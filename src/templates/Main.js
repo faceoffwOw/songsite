@@ -9,7 +9,7 @@ function Main() {
       <section>
         <div className="container">
           <div className="content">
-            <h1>Main</h1>
+            <h1>Main Home</h1>
           </div>
         </div>
       </section>
