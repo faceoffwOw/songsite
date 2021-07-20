@@ -28,20 +28,58 @@ h1 {
   height: 75px;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .logo {
+  width: 40px;
+  height: 38px;
   margin-left: 430px;
   margin-right: 77px;
   /* icon blur */
   filter: drop-shadow(0px 4px 70px rgba(253, 255, 176, 0.78));
+  background: url("../img/headphones.svg");
+}
+
+.logo:hover {
+  background: url("../img/headphones_hover.svg");
 }
 
 .social {
-  fill: #ff7e6d;
   margin-right: 50px;
   /* icon blur */
   filter: drop-shadow(0px 4px 70px rgba(253, 255, 176, 0.78));
+  background: transparent;
+}
+
+.youtube {
+  width: 40px;
+  height: 30px;
+  background: url("../img/youtube.svg");
+}
+
+.youtube:hover {
+  background: url("../img/youtube_hover.svg");
+}
+
+.instagram {
+  width: 40px;
+  height: 40px;
+  background: url("../img/instagram.svg");
+}
+
+.instagram:hover {
+  background: url("../img/instagram_hover.svg");
+}
+
+.vk {
+  background: url("../img/vk.svg");
+  height: 24px;
+  width: 40px;
+}
+
+.vk:hover {
+  background: url("../img/vk_hover.svg");
 }
 
 .menu {
