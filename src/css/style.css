@@ -1,0 +1,138 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  color: #ff7e6d;
+}
+
+.header {
+  height: 75px;
+  margin: 0 auto;
+  background: url("../img/background.jpg");
+}
+
+.header a {
+  color: #ff7e6d;
+  opacity: 100%;
+}
+
+.container {
+  height: 1005px;
+  background: url("../img/kontsert.jpg");
+  margin-top: 75px;
+}
+
+.nav {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 40px;
+  height: 38px;
+  margin-left: 430px;
+  margin-right: 77px;
+  /* icon blur */
+  filter: drop-shadow(0px 4px 70px rgba(253, 255, 176, 0.78));
+  background: url("../img/headphones.svg");
+}
+
+.logo:hover {
+  background: url("../img/headphones_hover.svg");
+}
+
+.social {
+  margin-right: 50px;
+  /* icon blur */
+  filter: drop-shadow(0px 4px 70px rgba(253, 255, 176, 0.78));
+  background: transparent;
+}
+
+.youtube {
+  width: 40px;
+  height: 30px;
+  background: url("../img/youtube.svg");
+}
+
+.youtube:hover {
+  background: url("../img/youtube_hover.svg");
+}
+
+.instagram {
+  width: 40px;
+  height: 40px;
+  background: url("../img/instagram.svg");
+}
+
+.instagram:hover {
+  background: url("../img/instagram_hover.svg");
+}
+
+.vk {
+  background: url("../img/vk.svg");
+  height: 24px;
+  width: 40px;
+}
+
+.vk:hover {
+  background: url("../img/vk_hover.svg");
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu li a:hover {
+  color: #ffd26d;
+  opacity: 100%;
+}
+
+.menu li {
+  list-style-type: none;
+  margin-right: 109px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  /* icon blur */
+  text-shadow: 0px 4px 70px rgba(253, 255, 176, 0.78);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+div.gallery {
+  margin: 50px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: #ff7e6d;
+  opacity: 100%;
+}
