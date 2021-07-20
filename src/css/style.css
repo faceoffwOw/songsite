@@ -19,7 +19,7 @@ h1 {
 }
 
 .container {
-  height: 889px;
+  height: 1005px;
   background: url("../img/kontsert.jpg");
   margin-top: 75px;
 }
@@ -112,4 +112,27 @@ h1 {
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+div.gallery {
+  margin: 50px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: #ff7e6d;
+  opacity: 100%;
 }

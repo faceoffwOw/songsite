@@ -18,7 +18,7 @@ function Header() {
             <a href="/tour">Тур</a>
           </li>
           <li>
-            <a href="/galery">Галерея</a>
+            <a href="/gallery">Галерея</a>
           </li>
         </ul>
         <a href="#" className="social youtube"></a>
