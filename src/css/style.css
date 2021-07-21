@@ -8,6 +8,8 @@ h1 {
 }
 
 .header {
+  position: sticky;
+  top: 0;
   height: 75px;
   margin: 0 auto;
   background: url("../img/background.jpg");
@@ -21,7 +23,6 @@ h1 {
 .container {
   height: 1005px;
   background: url("../img/kontsert.jpg");
-  margin-top: 75px;
 }
 
 .nav {
@@ -106,12 +107,6 @@ h1 {
   line-height: 21px;
   /* icon blur */
   text-shadow: 0px 4px 70px rgba(253, 255, 176, 0.78);
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
 div.gallery {
