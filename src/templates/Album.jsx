@@ -5,7 +5,6 @@ import Header from "./Header";
 function Album() {
   return (
     <>
-      <Header />
       <section>
         <div className="container"></div>
       </section>

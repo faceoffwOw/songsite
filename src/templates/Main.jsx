@@ -1,7 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import "../css/style.css";
-import Header from "./Header";
 
 function Main() {
   return (
@@ -9,7 +8,7 @@ function Main() {
       <section>
         <div className="container">
           <div className="content">
-            <h1>Main Home</h1>
+            <h1>Main</h1>
           </div>
         </div>
       </section>
