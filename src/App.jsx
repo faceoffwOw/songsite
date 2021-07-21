@@ -6,6 +6,15 @@ import Header from "./templates/Header";
 import Album from "./templates/Album";
 import Tour from "./templates/Tour";
 import Gallery from "./templates/Gallery";
+import styled from "styled-components"
+
+
+const AppWrapper = styled.div`
+width: 100%
+min-height: 100vh;
+padding: 20rem;
+background: black;
+`
 
 function App() {
   return (
