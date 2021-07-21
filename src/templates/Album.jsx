@@ -6,7 +6,9 @@ function Album() {
   return (
     <>
       <section>
-        <div className="container"></div>
+        <div className="container">
+          <h1>Album</h1>
+        </div>
       </section>
     </>
   );

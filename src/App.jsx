@@ -10,8 +10,8 @@ import Gallery from "./templates/Gallery";
 function App() {
   return (
     <>
-      <Header />
       <Router>
+      <Header />
         <Switch>
           <Route exact path="/" component={Main}></Route>
           <Route exact path="/album" component={Album}></Route>

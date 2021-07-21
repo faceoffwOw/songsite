@@ -9,16 +9,16 @@ function Header() {
         <a href="#" className="logo"></a>
         <ul className=" menu">
           <li>
-            <a href="/">Главная</a>
+            <Link to="/">Главная</Link>
           </li>
           <li>
-            <a href="/album">Альбом</a>
+            <Link to="/album">Альбом</Link>
           </li>
           <li>
-            <a href="/tour">Тур</a>
+            <Link to="/tour">Тур</Link>
           </li>
           <li>
-            <a href="/gallery">Галерея</a>
+            <Link to="/gallery">Галлерея</Link>
           </li>
         </ul>
         <a href="#" className="social youtube"></a>
