@@ -138,7 +138,7 @@ function Header() {
             <NavLink to="/tour">Тур</NavLink>
           </Head_li>
           <Head_li>
-            <NavLink to="/gallery">Галлерея</NavLink>
+            <NavLink to="/galery">Галерея</NavLink>
           </Head_li>
         </Head_ul>
         <Youtube></Youtube>
