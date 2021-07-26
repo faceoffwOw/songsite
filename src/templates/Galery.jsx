@@ -1,6 +1,45 @@
 import React from "react";
 import "../css/style.css";
-import pic from "../img/s1200.jpg";
+import styled from "styled-components";
+import kontsert from "../img/kontsert.jpg";
+
+const Section = styled.section
+`
+  width: auto;
+  padding: 7vh 10vh;
+  background: url(${kontsert}) repeat-y;
+`;
+
+const Container = styled.div
+`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Galery_div = styled.div
+`
+  width: 15%;
+  height: 15%;
+  margin: 2.5vh;
+`;
+
+const Galery_a = styled.a
+`
+`;
+
+const Desc = styled.div
+`
+  width: 100%;
+  height: 10%;
+  background-color: ${props => props.back ? "green" : "yellow"}
+`;
+
+const Img = styled.img
+`
+  src: url(${props => props.src});
+  width: 100%;
+  heigth: 90%
+`;
 
 const requestUrl = "https://jsonplaceholder.typicode.com/photos";
 
@@ -22,36 +61,18 @@ fetch(requestUrl)
 const Gallery = () => {
   return (
     <>
-      <section>
-        <div className="container">
+      <Section>
+        <Container>
           {arr.map((arr, index) => (
-            <div className="galery">
-            <a href={arr.url}>
-              <img src={arr.url} width="600" height="600"></img>
-            </a>
-            <div className="desc">{arr.title}</div>
-            </div>
+            <>
+            <Galery_div>
+              <Galery_a href={arr.url}><Img src={arr.url}></Img></Galery_a>
+              {arr.title.includes("quis") ? <Desc back>{arr.title}</Desc> : <Desc>{arr.title}</Desc> }
+            </Galery_div>
+            </>
           ))}
-          <div className="galery">
-            <a href={pic}>
-              <img src={pic} width="600" height="400"></img>
-            </a>
-            <div className="desc">Add photos</div>
-          </div>
-          <div className="galery">
-            <a href={pic}>
-              <img src={pic} width="600" height="400"></img>
-            </a>
-            <div className="desc">Add photos</div>
-          </div>
-          <div className="galery">
-            <a href={pic}>
-              <img src={pic} width="600" height="400"></img>
-            </a>
-            <div className="desc">Add photos</div>
-          </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 };
