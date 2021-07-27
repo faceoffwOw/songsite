@@ -41,7 +41,49 @@ const Img = styled.img
   heigth: 90%
 `;
 
+const delay = ms => {
+  return new Promise(r => setTimeout(() => r(), ms));
+}
+
+delay(2000).then(() => console.log("2 sec"));
+
+const url = 'https://jsonplaceholder.typicode.com/todos';
+/*
+function fetchTodos(){
+  console.log("start");
+  return delay(2000).then(() => fetch(url)
+  ).then(response => response.json())
+}
+
+fetchTodos()
+.then(data => {console.log('Data:', data)})
+.catch(e => console.error(e))
+*/
 const requestUrl = "https://jsonplaceholder.typicode.com/photos";
+const arr = [];
+
+async function fetchAsync(){
+  try{
+    const response = await fetch(requestUrl);
+    const data = await response.json();
+    
+    if(data){
+      data.forEach(item => {
+        if(item.albumId === 1){
+          arr.push(item);
+        }
+      });
+    }
+    
+  }
+  catch(e){
+    console.error(e);
+  }
+}
+
+fetchAsync();
+
+/*
 
 const arr = [];
 
@@ -56,7 +98,7 @@ fetch(requestUrl)
         });
       }
     })
-
+*/
 
 const Gallery = () => {
   return (
@@ -65,7 +107,7 @@ const Gallery = () => {
         <Container>
           {arr.map((arr, index) => (
             <>
-            <Galery_div>
+            <Galery_div key={arr.id}>
               <Galery_a href={arr.url}><Img src={arr.url}></Img></Galery_a>
               {arr.title.includes("quis") ? <Desc back>{arr.title}</Desc> : <Desc>{arr.title}</Desc> }
             </Galery_div>
