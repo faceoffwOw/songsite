@@ -51,9 +51,8 @@ class Galery extends React.Component{
 
   async componentDidMount(){
     const elemDel = 4950;
-    const response = await API.get(`photos`);
+    const response = await API.get(`photos?albumId=1`);
     const arr = await response.data;
-    await arr.splice(arr.length - elemDel, elemDel);
     await this.setState({arr});
   }
   
