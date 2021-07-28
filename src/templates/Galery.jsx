@@ -2,6 +2,7 @@ import React from "react";
 import "../css/style.css";
 import styled from "styled-components";
 import kontsert from "../img/kontsert.jpg";
+import axios from "axios";
 
 const Section = styled.section
 `
@@ -41,82 +42,39 @@ const Img = styled.img
   heigth: 90%
 `;
 
-const delay = ms => {
-  return new Promise(r => setTimeout(() => r(), ms));
-}
-
-delay(2000).then(() => console.log("2 sec"));
-
-const url = 'https://jsonplaceholder.typicode.com/todos';
-/*
-function fetchTodos(){
-  console.log("start");
-  return delay(2000).then(() => fetch(url)
-  ).then(response => response.json())
-}
-
-fetchTodos()
-.then(data => {console.log('Data:', data)})
-.catch(e => console.error(e))
-*/
 const requestUrl = "https://jsonplaceholder.typicode.com/photos";
-const arr = [];
 
-async function fetchAsync(){
-  try{
-    const response = await fetch(requestUrl);
-    const data = await response.json();
-    
-    if(data){
-      data.forEach(item => {
-        if(item.albumId === 1){
-          arr.push(item);
-        }
-      });
-    }
-    
+class Galery extends React.Component{
+  state = {
+    arr: [],
   }
-  catch(e){
-    console.error(e);
-  }
-}
 
-fetchAsync();
-
-/*
-
-const arr = [];
-
-fetch(requestUrl)
-    .then(response => response.json())
-    .then(data => {
-      if(data){
-        data.forEach(item => {
-          if(item.albumId === 1){
-            arr.push(item);
-          }
-        });
-      }
+  componentDidMount(){
+    axios.get(requestUrl)
+    .then(response =>{
+      const arr = response.data;
+      const elemDel = 4950;
+      arr.splice(arr.length - elemDel, elemDel);
+      this.setState({arr});
     })
-*/
+  }
 
-const Gallery = () => {
-  return (
-    <>
+  render() {
+    return (
+      <>
       <Section>
         <Container>
-          {arr.map((arr, index) => (
-            <>
-            <Galery_div key={arr.id}>
-              <Galery_a href={arr.url}><Img src={arr.url}></Img></Galery_a>
-              {arr.title.includes("quis") ? <Desc back>{arr.title}</Desc> : <Desc>{arr.title}</Desc> }
-            </Galery_div>
-            </>
-          ))}
+        {this.state.arr.map(item => (
+          <Galery_div key={item.id}>
+          <Galery_a href={item.url}><Img src={item.url}></Img></Galery_a>
+          {item.title.includes("quis") ? <Desc back>{item.title}</Desc> : <Desc>{item.title}</Desc> }
+          </Galery_div>
+        ))}
         </Container>
       </Section>
-    </>
-  );
-};
+      </>
+    )
+  }
+}
 
-export default Gallery;
+export default Galery;
