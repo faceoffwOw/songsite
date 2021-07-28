@@ -1,8 +1,8 @@
 import React from "react";
-import "../css/style.css";
 import styled from "styled-components";
 import kontsert from "../img/kontsert.jpg";
 import axios from "axios";
+import API from "../Api";
 
 const Section = styled.section
 `
@@ -49,16 +49,14 @@ class Galery extends React.Component{
     arr: [],
   }
 
-  componentDidMount(){
-    axios.get(requestUrl)
-    .then(response =>{
-      const arr = response.data;
-      const elemDel = 4950;
-      arr.splice(arr.length - elemDel, elemDel);
-      this.setState({arr});
-    })
+  async componentDidMount(){
+    const elemDel = 4950;
+    const response = await API.get(`photos`);
+    const arr = await response.data;
+    await arr.splice(arr.length - elemDel, elemDel);
+    await this.setState({arr});
   }
-
+  
   render() {
     return (
       <>
